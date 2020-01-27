@@ -81,3 +81,43 @@ print("print D matrix:\n", D)
 print("\nD[2, 3] - is the element in D matrix in position y=2, x=3 (counting from 0)\n", D[2, 3])
 # ':' means that we should take ALL y-axis values, and '1' means we should take second value by x-axis.
 print("\nD[:, 1] - is the second column in D matrix\n", D[:, 1])
+
+# task 12
+vector_rand_normal_1 = np.random.normal(0, 0.1, 1000)
+vector_rand_normal_2 = np.random.normal(0, 0.1, 1000)
+vector_rand_sample_1 = np.random.random_sample((1000,))
+vector_rand_sample_2 = np.random.random_sample((1000,))
+
+# task 12 (№2)
+plt.scatter(vector_rand_normal_1, vector_rand_normal_2)
+plt.show()
+plt.scatter(vector_rand_sample_1, vector_rand_sample_2)
+plt.show()
+
+# task 13
+random_vector_list = []
+for i in range(2, 11):
+    # random_sample returns values from 0 to 1.
+    # To make range from 100 to 200 we multiply the vector by 100 and add 100
+    new_v = 100 * np.random.random_sample((i,)) + 100
+    random_vector_list.append(new_v)
+
+# task 14 (not done)
+X = np.arange(-10, 0.1, step=10)
+Y = X ** 2
+
+
+# task 16
+def customfunc(x, y):
+    if x > y:
+        return x * y
+    elif x < y:
+        return (y - x) * x
+    else:
+        return 0
+
+
+R = np.zeros(shape=(200, 200))
+for x_val in range(-100, 100):
+    for y_val in range(-100, 100):
+        R[x_val + 100, y_val + 100] = customfunc(x_val, y_val)
