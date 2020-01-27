@@ -1,6 +1,10 @@
 # import numpy package - for scientific computing
 import numpy as np
 
+# import other packages for tasks
+import matplotlib.pyplot as plt
+import scipy.stats
+
 # task 1 - create integer variable with value 100
 hundred = 100
 print("task 1: ", hundred)
